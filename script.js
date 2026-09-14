@@ -10,8 +10,8 @@ const cursorGlow = document.querySelector(".cursor-glow");
 let activeCard = null;
 let lastFocusedElement = null;
 
-// Sustituye este valor por el número real: código de país + número, sin +, espacios ni símbolos.
-const WHATSAPP_NUMBER = "51999999999";
+// Número en formato internacional: código de país + número, sin +, espacios ni símbolos.
+const WHATSAPP_NUMBER = "51921584279";
 const WHATSAPP_MESSAGE = "Hola, quiero más información, estoy interesado en sus proyectos.";
 document.querySelector("#whatsapp-link").href =
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
