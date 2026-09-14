@@ -1,12 +1,12 @@
 :root {
-  --bg: #07090f;
-  --surface: #0d1019;
-  --surface-2: #131722;
-  --text: #f5f6fb;
-  --muted: #989dab;
+  --bg: #020814;
+  --surface: #071427;
+  --surface-2: #0b1c33;
+  --text: #f4f9ff;
+  --muted: #91a2b8;
   --line: rgba(255, 255, 255, 0.1);
-  --accent: #9b7cff;
-  --mint: #8af5cf;
+  --accent: #087cff;
+  --mint: #11dff3;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -16,8 +16,8 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    radial-gradient(circle at 15% 8%, rgba(102, 73, 220, 0.12), transparent 25rem),
-    radial-gradient(circle at 90% 32%, rgba(48, 211, 176, 0.07), transparent 26rem),
+    radial-gradient(circle at 15% 8%, rgba(8, 124, 255, 0.16), transparent 26rem),
+    radial-gradient(circle at 90% 32%, rgba(17, 223, 243, 0.09), transparent 26rem),
     var(--bg);
   font-family: Inter, "Segoe UI", Arial, sans-serif;
   overflow-x: hidden;
@@ -36,7 +36,7 @@ button { color: inherit; font: inherit; }
 
 .cursor-glow {
   position: fixed; width: 30rem; height: 30rem; border-radius: 50%; z-index: -1;
-  background: radial-gradient(circle, rgba(145, 115, 255, 0.1), transparent 65%);
+  background: radial-gradient(circle, rgba(8, 124, 255, 0.13), transparent 65%);
   transform: translate(-50%, -50%); pointer-events: none; will-change: left, top;
 }
 
@@ -69,18 +69,18 @@ nav a:hover::after { right: 0; }
 .eyebrow { display: flex; align-items: center; gap: 10px; color: #b4b8c5; font-size: 11px; font-weight: 650; letter-spacing: .22em; text-transform: uppercase; }
 .eyebrow > span { width: 28px; height: 1px; background: var(--mint); box-shadow: 0 0 12px var(--mint); }
 .hero h1 { margin: 26px 0 24px; font-size: clamp(3.6rem, 7.1vw, 7.15rem); line-height: .92; letter-spacing: -.07em; max-width: 840px; }
-h1 em, .contact-section em { color: transparent; font-family: Georgia, serif; font-weight: 400; background: linear-gradient(95deg, #a889ff, #78e8e0); background-clip: text; -webkit-background-clip: text; }
+h1 em, .contact-section em { color: transparent; font-family: Georgia, serif; font-weight: 400; background: linear-gradient(95deg, #087cff, #11dff3); background-clip: text; -webkit-background-clip: text; }
 .hero-copy > p { max-width: 520px; margin: 0 0 34px; color: var(--muted); font-size: 16px; line-height: 1.75; }
 .hero-cta { display: inline-flex; align-items: center; gap: 25px; padding: 8px 8px 8px 0; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
 .hero-cta svg { width: 44px; height: 44px; padding: 12px; border: 1px solid var(--line); border-radius: 50%; fill: none; stroke: currentColor; stroke-width: 1.4; transition: transform .45s var(--ease), background .45s, color .45s; }
 .hero-cta:hover svg { transform: rotate(45deg); color: #080a0e; background: var(--mint); }
 
 .hero-object { position: relative; z-index: 2; width: min(37vw, 530px); aspect-ratio: 1; justify-self: center; perspective: 900px; animation: float 6s ease-in-out infinite; }
-.glass-core { position: absolute; inset: 24%; border-radius: 35% 65% 55% 45% / 45% 34% 66% 55%; display: grid; place-items: center; transform: rotate(-18deg); background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.8), rgba(161,126,255,.34) 16%, rgba(66,45,149,.35) 50%, rgba(9,11,20,.72) 74%); border: 1px solid rgba(255,255,255,.28); box-shadow: inset -25px -25px 60px rgba(5,7,16,.65), inset 15px 12px 30px rgba(255,255,255,.15), 0 45px 90px rgba(83,50,200,.32); backdrop-filter: blur(12px); }
-.core-letter { font-size: clamp(4rem, 8vw, 8rem); font-weight: 800; transform: rotate(18deg); color: rgba(255,255,255,.92); text-shadow: 0 0 25px rgba(159,132,255,.65); }
+.glass-core { position: absolute; inset: 24%; border-radius: 35% 65% 55% 45% / 45% 34% 66% 55%; display: grid; place-items: center; transform: rotate(-18deg); background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.9), rgba(17,223,243,.36) 16%, rgba(8,92,211,.42) 50%, rgba(2,8,20,.78) 74%); border: 1px solid rgba(154,224,255,.36); box-shadow: inset -25px -25px 60px rgba(1,7,20,.72), inset 15px 12px 30px rgba(255,255,255,.16), 0 45px 90px rgba(0,106,255,.34); backdrop-filter: blur(12px); }
+.core-letter { font-size: clamp(4rem, 8vw, 8rem); font-weight: 800; transform: rotate(18deg); color: rgba(255,255,255,.94); text-shadow: 0 0 25px rgba(17,194,255,.72); }
 .core-shine { position: absolute; width: 42%; height: 18%; top: 10%; left: 12%; border-radius: 50%; background: rgba(255,255,255,.27); filter: blur(9px); transform: rotate(-25deg); }
-.orbital { position: absolute; inset: 9%; border: 1px solid rgba(172,152,255,.27); border-radius: 50%; transform: rotateX(64deg) rotateZ(15deg); box-shadow: 0 0 30px rgba(124,97,255,.08); }
-.orbital--inner { inset: 19%; transform: rotateY(68deg) rotateZ(42deg); border-color: rgba(127,244,208,.23); }
+.orbital { position: absolute; inset: 9%; border: 1px solid rgba(58,155,255,.32); border-radius: 50%; transform: rotateX(64deg) rotateZ(15deg); box-shadow: 0 0 30px rgba(8,124,255,.12); }
+.orbital--inner { inset: 19%; transform: rotateY(68deg) rotateZ(42deg); border-color: rgba(17,223,243,.28); }
 .satellite { position: absolute; width: 9px; aspect-ratio: 1; border-radius: 50%; background: var(--mint); box-shadow: 0 0 18px var(--mint); }
 .satellite--one { left: 8%; top: 45%; }
 .satellite--two { right: 9%; top: 28%; width: 6px; background: var(--accent); box-shadow: 0 0 15px var(--accent); }
@@ -116,7 +116,7 @@ h1 em, .contact-section em { color: transparent; font-family: Georgia, serif; fo
 .card-action svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 1.4; }
 .project-card:hover .card-action { color: #07090f; background: var(--text); transform: rotate(-25deg); }
 
-.contact-section { margin: 110px auto 0; padding: 130px 24px 145px; border-top: 1px solid var(--line); text-align: center; background: radial-gradient(circle at 50% 100%, rgba(137,104,255,.16), transparent 42%); }
+.contact-section { margin: 110px auto 0; padding: 130px 24px 145px; border-top: 1px solid var(--line); text-align: center; background: radial-gradient(circle at 50% 100%, rgba(8,124,255,.18), transparent 42%); }
 .contact-section > p { color: var(--mint); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
 .contact-section h2 { max-width: 900px; margin: 25px auto 45px; font-size: clamp(3rem, 7.2vw, 7.1rem); line-height: .95; letter-spacing: -.06em; }
 .contact-link { display: inline-flex; gap: 14px; padding-bottom: 8px; border-bottom: 1px solid #535864; color: #c9ccd4; font-size: 14px; transition: color .3s, border-color .3s; }
