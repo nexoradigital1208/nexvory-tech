@@ -11,7 +11,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   margin: 0;
   color: var(--text);
@@ -28,6 +28,7 @@ body.lightbox-open { overflow: hidden; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
 button { color: inherit; font: inherit; }
+img { max-width: 100%; }
 
 .noise {
   position: fixed; inset: 0; z-index: 100; pointer-events: none; opacity: 0.035;
@@ -156,38 +157,84 @@ footer p { font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
 @keyframes scrollLine { 0%,100% { transform: scaleY(.4); transform-origin: top; opacity: .35; } 50% { transform: scaleY(1); opacity: 1; } }
 @keyframes whatsappPulse { 0%, 20%, 100% { box-shadow: 0 10px 35px rgba(32,201,105,.3), 0 0 0 0 rgba(32,201,105,.32); } 45% { box-shadow: 0 10px 35px rgba(32,201,105,.3), 0 0 0 12px rgba(32,201,105,0); } }
 
+@media (max-width: 1100px) {
+  .site-header { padding-inline: 32px; }
+  .hero { padding-inline: 52px; }
+  .hero h1 { font-size: clamp(3.7rem, 7vw, 5.3rem); }
+  .projects-section { padding-inline: 32px; }
+  .contact-section h2 { max-width: 760px; }
+}
+
 @media (max-width: 850px) {
-  .hero { min-height: 920px; grid-template-columns: 1fr; align-content: center; padding-top: 135px; }
+  .hero { min-height: max(820px, 100svh); grid-template-columns: 1fr; align-content: center; padding: 145px 32px 110px; }
   .hero-copy { z-index: 4; }
-  .hero h1 { font-size: clamp(3.4rem, 13vw, 6rem); }
-  .hero-object { position: absolute; width: min(75vw, 480px); right: -15vw; bottom: 1%; opacity: .65; }
+  .hero h1 { max-width: 680px; font-size: clamp(3.4rem, 10.5vw, 5.4rem); }
+  .hero-object { position: absolute; width: min(68vw, 480px); right: -12vw; bottom: 0; opacity: .58; }
   .section-heading { align-items: start; flex-direction: column; }
   .projects-grid { gap: 55px 18px; }
+  .contact-section { margin-top: 85px; }
 }
 
 @media (max-width: 620px) {
-  .site-header { padding-top: 22px; }
+  .site-header { padding: 20px 22px; }
   .brand-symbol { width: 40px; height: 35px; }
   .brand-wordmark { font-size: 12px; }
   .brand-wordmark small { font-size: 6px; }
   nav { gap: 18px; }
   nav a:last-child { display: none; }
-  .hero { min-height: 800px; align-content: start; padding-top: 165px; }
-  .hero h1 { margin-top: 22px; font-size: clamp(3rem, 14vw, 4rem); }
+  nav a { min-height: 44px; display: inline-flex; align-items: center; }
+  .hero { min-height: max(760px, 100svh); align-content: start; padding: 150px 22px 90px; }
+  .hero h1 { max-width: 100%; margin-top: 22px; font-size: clamp(2.9rem, 13vw, 4rem); overflow-wrap: normal; }
   .hero-copy > p { font-size: 14px; }
-  .hero-object { width: 90vw; right: -34vw; bottom: -1%; }
+  .hero-object { width: min(90vw, 420px); right: -32vw; bottom: -1%; opacity: .48; }
   .scroll-cue { display: none; }
-  .projects-section { padding-top: 90px; }
+  .projects-section { padding: 88px 22px 60px; }
   .section-heading { margin-bottom: 42px; }
   .projects-grid { grid-template-columns: 1fr; gap: 52px; }
   .project-card--wide { grid-column: auto; }
-  .project-card--wide .project-visual, .project-visual { aspect-ratio: 1.18; }
+  .project-card--wide .project-visual, .project-visual { aspect-ratio: 4 / 3; }
+  .project-visual--system img { object-fit: contain; background: #063b3c; }
+  .project-number { top: 15px; left: 16px; }
+  .project-category { left: 16px; bottom: 15px; max-width: calc(100% - 32px); }
+  .project-info { align-items: flex-start; padding-top: 18px; }
+  .project-info p { max-width: 30rem; line-height: 1.55; }
+  .card-action { width: 44px; height: 44px; }
   .contact-section { margin-top: 65px; padding: 100px 22px 110px; }
+  .contact-section h2 { font-size: clamp(2.8rem, 13vw, 4.2rem); overflow-wrap: break-word; }
   footer { align-items: flex-start; flex-direction: column; }
   .lightbox { padding: 20px; }
-  .lightbox-frame { width: 96vw; height: 72vh; }
-  .whatsapp { right: 17px; bottom: 17px; }
+  .lightbox-frame { width: 96vw; height: min(72vh, 620px); }
+  .lightbox-close { top: max(16px, env(safe-area-inset-top)); right: 16px; }
+  .lightbox > p { display: none; }
+  .project-menu { left: 50% !important; top: auto !important; bottom: calc(82px + env(safe-area-inset-bottom)); transform: translate(-50%, 18px) scale(.94); }
+  .project-menu.is-open { transform: translate(-50%, 0) scale(1); }
+  .project-menu button, .project-menu a, .private-state { min-height: 58px; }
+  .whatsapp { right: 17px; bottom: calc(17px + env(safe-area-inset-bottom)); }
   .whatsapp-label { display: none; }
+}
+
+@media (max-width: 390px) {
+  .site-header { padding-inline: 16px; }
+  .brand { gap: 7px; }
+  .brand-symbol { width: 36px; height: 32px; }
+  .brand-wordmark { font-size: 10px; }
+  .brand-wordmark small { margin-top: 4px; font-size: 5px; }
+  nav a { font-size: 11px; }
+  .hero { padding: 135px 18px 80px; }
+  .eyebrow { gap: 8px; font-size: 9px; letter-spacing: .14em; }
+  .eyebrow > span { width: 20px; }
+  .hero h1 { font-size: clamp(2.65rem, 13.5vw, 3.3rem); line-height: .95; letter-spacing: -.06em; }
+  .hero-copy > p { font-size: 13px; line-height: 1.65; }
+  .hero-object { right: -42vw; opacity: .42; }
+  .projects-section { padding-inline: 18px; }
+  .section-heading h2 { font-size: 2.45rem; }
+  .project-category { font-size: 8px; letter-spacing: .1em; }
+  .project-info { gap: 12px; }
+  .contact-section { padding-inline: 18px; }
+  .contact-link { font-size: 12px; }
+  footer { padding-inline: 18px; }
+  footer p { max-width: 230px; line-height: 1.55; }
+  .whatsapp-icon { width: 50px; height: 50px; }
 }
 
 @media (hover: none) {
