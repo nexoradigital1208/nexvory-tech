@@ -1,0 +1,14 @@
+# Archivos del sistema y del editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Capturas y perfiles temporales de pruebas locales
+*-check.png
+.edge-*/
+.chrome-*/
+
+# Dependencias y salidas futuras
+node_modules/
+dist/
