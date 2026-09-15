@@ -183,10 +183,10 @@ footer p { font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
   nav { gap: 18px; }
   nav a:last-child { display: none; }
   nav a { min-height: 44px; display: inline-flex; align-items: center; }
-  .hero { min-height: max(760px, 100svh); align-content: start; padding: 150px 22px 90px; }
-  .hero h1 { max-width: 100%; margin-top: 22px; font-size: clamp(2.9rem, 13vw, 4rem); overflow-wrap: normal; }
+  .hero { min-height: max(720px, 100svh); align-content: start; padding: 138px 22px 80px; }
+  .hero h1 { max-width: 100%; margin-top: 22px; font-size: clamp(2.75rem, 11.5vw, 3.55rem); line-height: .96; overflow-wrap: normal; }
   .hero-copy > p { font-size: 14px; }
-  .hero-object { width: min(90vw, 420px); right: -32vw; bottom: -1%; opacity: .48; }
+  .hero-object { width: min(62vw, 285px); left: 50%; right: auto; bottom: 1.5%; margin-left: max(-31vw, -142px); opacity: .78; }
   .scroll-cue { display: none; }
   .projects-section { padding: 88px 22px 60px; }
   .section-heading { margin-bottom: 42px; }
@@ -220,12 +220,12 @@ footer p { font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
   .brand-wordmark { font-size: 10px; }
   .brand-wordmark small { margin-top: 4px; font-size: 5px; }
   nav a { font-size: 11px; }
-  .hero { padding: 135px 18px 80px; }
+  .hero { min-height: max(700px, 100svh); padding: 126px 18px 72px; }
   .eyebrow { gap: 8px; font-size: 9px; letter-spacing: .14em; }
   .eyebrow > span { width: 20px; }
-  .hero h1 { font-size: clamp(2.65rem, 13.5vw, 3.3rem); line-height: .95; letter-spacing: -.06em; }
+  .hero h1 { font-size: clamp(2.55rem, 11.8vw, 3rem); line-height: .97; letter-spacing: -.055em; }
   .hero-copy > p { font-size: 13px; line-height: 1.65; }
-  .hero-object { right: -42vw; opacity: .42; }
+  .hero-object { width: 68vw; left: 50%; right: auto; margin-left: -34vw; opacity: .74; }
   .projects-section { padding-inline: 18px; }
   .section-heading h2 { font-size: 2.45rem; }
   .project-category { font-size: 8px; letter-spacing: .1em; }
