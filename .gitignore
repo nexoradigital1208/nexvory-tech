@@ -8,6 +8,10 @@ Thumbs.db
 *-check.png
 .edge-*/
 .chrome-*/
+.tmp-*
+
+# Backend interno de Google Apps Script, pruebas y documentación operativa
+/apps-script/
 
 # Dependencias y salidas futuras
 node_modules/

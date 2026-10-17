@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nexoradigital1208.github.io/nexvory-tech/sitemap.xml
