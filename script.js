@@ -21,7 +21,7 @@ let pendingCrmSubmission = null;
 let crmResponseTimeout = 0;
 
 // Número en formato internacional: código de país + número, sin +, espacios ni símbolos.
-const WHATSAPP_NUMBER = "51921584279";
+const WHATSAPP_NUMBER = "51929437093";
 const WHATSAPP_MESSAGE = "Hola, equipo de Nexvory Tech. 👋 Estoy interesado en sus servicios tecnológicos y quisiera recibir más información.";
 const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
