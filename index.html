@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#020814" />
+    <meta name="theme-color" content="#0c1626" />
     <meta
       name="description"
       content="Nexvory Tech desarrolla páginas web, sistemas empresariales, aplicaciones móviles, tiendas virtuales y automatizaciones para empresas en Perú."
@@ -21,75 +21,113 @@
     <title>Nexvory Tech | Desarrollo de software en Perú</title>
     <link rel="icon" type="image/png" href="assets/logo-nexvory.png?v=2" />
     <link rel="apple-touch-icon" href="assets/logo-nexvory.png?v=2" />
-    <link rel="stylesheet" href="styles.css?v=6" />
+    <link rel="stylesheet" href="styles.css?v=16" />
     <script src="crm-config.js?v=1" defer></script>
-    <script src="script.js?v=7" defer></script>
+    <script src="script.js?v=12" defer></script>
     <script type="application/ld+json">
       {"@context":"https://schema.org","@type":"Organization","name":"Nexvory Tech S.A.C.","url":"https://nexoradigital1208.github.io/nexvory-tech/","logo":"https://nexoradigital1208.github.io/nexvory-tech/assets/logo-nexvory.png","contactPoint":{"@type":"ContactPoint","telephone":"+51 929 437 093","contactType":"sales","areaServed":"PE","availableLanguage":"Spanish"}}
     </script>
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Nexvory Tech, ir al inicio">
         <img class="brand-symbol" src="assets/logo-nexvory.png?v=2" alt="" />
         <span class="brand-wordmark">NEXVORY<small>TECH</small></span>
       </a>
-      <nav aria-label="Navegación principal">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación"><span></span><span></span></button>
+      <nav id="main-nav" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#cotizacion">Cotizar</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a class="nav-cta" href="#cotizacion">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
 
-    <main>
+    <main id="contenido">
       <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="hero-orbit hero-orbit--one" aria-hidden="true"></div>
-        <div class="hero-orbit hero-orbit--two" aria-hidden="true"></div>
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span></span> Software · Estrategia · Innovación</div>
-          <h1 id="hero-title">Tecnología que impulsa tu <em>negocio.</em></h1>
+          <div class="eyebrow"><span></span> Tu próximo paso, digital.</div>
+          <h1 id="hero-title">Tu negocio tiene potencial.<br /> <em>Hagámoslo digital.</em></h1>
           <p>
-            Desarrollamos páginas web, aplicaciones y sistemas empresariales a la medida de tus objetivos.
+            Creamos páginas web, aplicaciones y sistemas a medida para que tu empresa venda mejor, trabaje más fácil y siga creciendo.
           </p>
           <div class="hero-actions">
-            <a class="button button--primary" href="#cotizacion">Solicitar cotización</a>
-            <a class="button button--secondary" href="#servicios">Conoce nuestros servicios</a>
+            <a class="button button--primary" href="#cotizacion">Conversemos de tu idea <span aria-hidden="true">↗</span></a>
+            <a class="hero-project-link" href="#proyectos">Explorar proyectos <span aria-hidden="true">↓</span></a>
           </div>
+          <div class="hero-note"><span aria-hidden="true">✓</span> Desarrollo a medida <span class="note-divider" aria-hidden="true"></span> Perú · Soluciones sin fronteras</div>
         </div>
 
-        <div class="hero-object reveal" aria-hidden="true">
-          <div class="orbital orbital--outer"></div>
-          <div class="orbital orbital--inner"></div>
-          <div class="glass-core">
-            <span class="core-shine"></span>
-            <img class="core-logo" src="assets/logo-nexvory.png?v=2" alt="" />
-          </div>
-          <span class="satellite satellite--one"></span>
-          <span class="satellite satellite--two"></span>
-          <span class="satellite satellite--three"></span>
+        <div class="work-showcase reveal">
+          <div class="showcase-topline"><span>Tu página web. En todas las pantallas.</span></div>
+          <figure class="device-showcase" aria-labelledby="web-preview-caption">
+            <div class="device-stage" aria-hidden="true">
+              <div class="desktop-device">
+                <div class="window-bar"><span></span><span></span><span></span><small>tu-marca.com</small><span class="window-expand">↗</span></div>
+                <div class="device-screen device-screen--desktop" data-preview-width="1000"><iframe src="assets/web-preview.html?v=2" title="Ejemplo de página web en computadora" tabindex="-1" loading="eager"></iframe></div>
+                <div class="desktop-chin"><span></span></div>
+                <div class="desktop-stand"></div>
+              </div>
+              <div class="phone-device">
+                <span class="phone-camera"></span>
+                <div class="device-screen device-screen--phone" data-preview-width="360"><iframe src="assets/web-preview.html?v=2" title="La misma página web adaptada a celular" tabindex="-1" loading="eager"></iframe></div>
+                <span class="phone-home"></span>
+              </div>
+              <span class="device-badge"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="14" height="11" rx="2"/><path d="M6 18h6m-3-4v4"/><rect x="16" y="9" width="6" height="12" rx="1.5"/></svg>Diseño adaptable</span>
+            </div>
+            <figcaption class="showcase-caption" id="web-preview-caption"><div><span class="project-dot"></span><strong>Diseño y desarrollo web</strong><span>Computadora · Tablet · Celular</span></div><a href="#proyectos" aria-label="Ver nuestros proyectos web">↗</a></figcaption>
+          </figure>
+          <div class="showcase-label"><span aria-hidden="true">↗</span> Páginas corporativas, tiendas online y soluciones a medida.</div>
         </div>
 
-        <div class="scroll-cue" aria-hidden="true"><span></span> Scroll para explorar</div>
+      </section>
+
+      <div class="capabilities-strip" aria-label="Nuestras especialidades"><span>Ideas claras. Tecnología útil.</span><div><span>Desarrollo web</span><i aria-hidden="true">/</i><span>Software a medida</span><i aria-hidden="true">/</i><span>Aplicaciones móviles</span><i aria-hidden="true">/</i><span>Automatización</span></div></div>
+
+      <section class="tech-section" id="tecnologias" aria-label="Tecnologías de desarrollo">
+        <div class="tech-viewport" tabindex="0" role="region" aria-label="Carrusel de tecnologías">
+          <div class="tech-track" id="tech-track">
+            <ul class="tech-group" aria-label="Lenguajes, herramientas y plataformas de desarrollo">
+              <li class="tech-item"><span class="tech-mark tech-mark--html" aria-hidden="true"><svg viewBox="0 0 32 36"><path fill="currentColor" d="m2 1 2.5 29L16 34l11.5-4L30 1Z"/><path fill="white" d="M8 8h17l-.4 4H12.6l.3 4h11.3l-1 10-7.2 2.4L9 26l-.5-6h4l.3 3 3.2 1 3.4-1 .3-3H9Z"/></svg></span><div><strong>HTML</strong><span>Estructura web</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--css" aria-hidden="true"><svg viewBox="0 0 32 36"><path fill="currentColor" d="m2 1 2.5 29L16 34l11.5-4L30 1Z"/><path fill="white" d="M8 8h17l-.4 4-9.2 4H24l-1 10-7 2.4L9 26l-.5-6h4l.3 3 3.2 1 3.4-1 .3-3H9l-.4-4 9-4H8.4Z"/></svg></span><div><strong>CSS</strong><span>Diseño e interfaces</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--js" aria-hidden="true">JS</span><div><strong>JavaScript</strong><span>Experiencias interactivas</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--ts" aria-hidden="true">TS</span><div><strong>TypeScript</strong><span>Aplicaciones escalables</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--react" aria-hidden="true"><svg viewBox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="18" cy="18" rx="16" ry="6"/><ellipse cx="18" cy="18" rx="16" ry="6" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="16" ry="6" transform="rotate(120 18 18)"/></g><circle cx="18" cy="18" r="3" fill="currentColor"/></svg></span><div><strong>React</strong><span>Interfaces dinámicas</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--next" aria-hidden="true">N</span><div><strong>Next.js</strong><span>Plataformas y sitios web</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--tailwind" aria-hidden="true"><svg viewBox="0 0 36 36"><path fill="currentColor" d="M5 15c2-8 10-10 15-5 3 4 6 4 11 0-2 9-10 10-15 5-3-3-6-3-11 0ZM1 25c2-8 10-10 15-5 3 4 6 4 11 0-2 9-10 10-15 5-3-3-6-3-11 0Z"/></svg></span><div><strong>Tailwind CSS</strong><span>Diseño adaptable</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--node" aria-hidden="true">JS</span><div><strong>Node.js</strong><span>Servicios e integraciones</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--python" aria-hidden="true">Py</span><div><strong>Python</strong><span>Sistemas y automatización</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--flask" aria-hidden="true">Fl</span><div><strong>Flask</strong><span>Aplicaciones y servicios web</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--dart" aria-hidden="true">D</span><div><strong>Dart</strong><span>Desarrollo móvil</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--flutter" aria-hidden="true"><svg viewBox="0 0 36 36"><path fill="currentColor" d="M21 2h12L11 24l-6-6Zm0 17h12L22 30l-6-6Z"/><path fill="currentColor" opacity=".6" d="m16 24 6 6 6 6H16l-6-6Z"/></svg></span><div><strong>Flutter</strong><span>Aplicaciones Android e iOS</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--electron" aria-hidden="true"><svg viewBox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="18" cy="18" rx="16" ry="6"/><ellipse cx="18" cy="18" rx="16" ry="6" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="16" ry="6" transform="rotate(120 18 18)"/></g><circle cx="18" cy="18" r="3" fill="currentColor"/></svg></span><div><strong>Electron</strong><span>Aplicaciones de escritorio</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--sql" aria-hidden="true"><svg viewBox="0 0 36 36"><g fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="18" cy="7" rx="12" ry="5"/><path d="M6 7v21c0 7 24 7 24 0V7M6 17c0 7 24 7 24 0M6 23c0 7 24 7 24 0"/></g></svg></span><div><strong>SQL</strong><span>Consultas y gestión de datos</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--postgres" aria-hidden="true">PG</span><div><strong>PostgreSQL</strong><span>Bases de datos relacionales</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--supabase" aria-hidden="true"><svg viewBox="0 0 36 36"><path fill="currentColor" d="M20 2 3 22h13v12l17-20H20Z"/></svg></span><div><strong>Supabase</strong><span>Datos y autenticación</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--apps" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="m13 9-9 9 9 9m10-18 9 9-9 9M21 5l-6 26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Google Apps Script</strong><span>Integración y automatización</span></div></li>
+              <li class="tech-item"><span class="tech-mark tech-mark--sheets" aria-hidden="true"><svg viewBox="0 0 36 36"><path fill="currentColor" d="M7 2h16l7 7v25H7Z"/><path fill="#fff" opacity=".35" d="M23 2v8h7Z"/><path fill="none" stroke="white" stroke-width="1.5" d="M12 16h13v12H12Zm0 4h13m-13 4h13m-8-8v12"/></svg></span><div><strong>Google Sheets</strong><span>Gestión y procesos conectados</span></div></li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section class="services-section" id="servicios" aria-labelledby="services-title">
         <div class="section-heading reveal">
           <div>
-            <div class="eyebrow"><span></span> Soluciones para tu negocio</div>
-            <h2 id="services-title">Servicios tecnológicos.</h2>
+            <div class="eyebrow"><span></span> 01 / Lo que hacemos</div>
+            <h2 id="services-title">La tecnología adecuada.<br /><span>Para tu siguiente etapa.</span></h2>
           </div>
-          <p>Diseñamos soluciones claras, escalables y alineadas con las necesidades reales de cada empresa.</p>
+          <p>Desde tu primera página web hasta el sistema que organiza toda tu operación. Construimos lo que tu negocio necesita.</p>
         </div>
         <div class="services-grid">
-          <article class="service-card reveal" data-service="desarrollo de una página web"><span class="service-icon">01</span><h3>Desarrollo de páginas web</h3><p>Sitios modernos, responsivos y optimizados para empresas y emprendimientos.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
-          <article class="service-card reveal" data-service="desarrollo de un sistema empresarial"><span class="service-icon">02</span><h3>Sistemas empresariales</h3><p>Soluciones para inventarios, ventas, operaciones y procesos administrativos.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
-          <article class="service-card reveal" data-service="desarrollo de una aplicación móvil"><span class="service-icon">03</span><h3>Aplicaciones móviles</h3><p>Aplicaciones para Android e iOS adaptadas a los objetivos de tu negocio.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
-          <article class="service-card reveal" data-service="desarrollo de una tienda virtual"><span class="service-icon">04</span><h3>Tiendas virtuales</h3><p>Plataformas para mostrar productos, gestionar catálogos y facilitar ventas en línea.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
-          <article class="service-card reveal" data-service="automatización de procesos"><span class="service-icon">05</span><h3>Automatización de procesos</h3><p>Tecnología para reducir tareas repetitivas y mejorar la eficiencia operativa.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
-          <article class="service-card reveal" data-service="consultoría tecnológica"><span class="service-icon">06</span><h3>Consultoría tecnológica</h3><p>Asesoramiento para implementar soluciones digitales y modernizar procesos.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
+          <article class="service-card reveal" data-service="desarrollo de una página web"><div class="service-top"><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01m-2 6-3 3 3 3m8-6 3 3-3 3m-3-7-2 8"/></svg></span><span class="service-index">01</span></div><h3>Desarrollo de páginas web</h3><p>Sitios modernos, responsivos y optimizados para empresas y emprendimientos.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
+          <article class="service-card reveal" data-service="desarrollo de un sistema empresarial"><div class="service-top"><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><span class="service-index">02</span></div><h3>Sistemas empresariales</h3><p>Soluciones para inventarios, ventas, operaciones y procesos administrativos.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
+          <article class="service-card reveal" data-service="desarrollo de una aplicación móvil"><div class="service-top"><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></svg></span><span class="service-index">03</span></div><h3>Aplicaciones móviles</h3><p>Aplicaciones para Android e iOS adaptadas a los objetivos de tu negocio.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
+          <article class="service-card reveal" data-service="desarrollo de una tienda virtual"><div class="service-top"><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 2 2 3 12h11l3-10H6m3 14h.01M18 21h.01"/><circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg></span><span class="service-index">04</span></div><h3>Tiendas virtuales</h3><p>Plataformas para mostrar productos, gestionar catálogos y facilitar ventas en línea.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
+          <article class="service-card reveal" data-service="automatización de procesos"><div class="service-top"><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-12h-7l1-8Z"/></svg></span><span class="service-index">05</span></div><h3>Automatización de procesos</h3><p>Tecnología para reducir tareas repetitivas y mejorar la eficiencia operativa.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
+          <article class="service-card reveal" data-service="consultoría tecnológica"><div class="service-top"><span class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18v-4m5 4V9m5 9v-7m5 7V5M3 21h19M3 9l6-5 5 3 7-5"/></svg></span><span class="service-index">06</span></div><h3>Consultoría tecnológica</h3><p>Asesoramiento para implementar soluciones digitales y modernizar procesos.</p><button class="service-link" type="button">Consultar servicio <span>↗</span></button></article>
         </div>
         <div class="services-cta reveal">
           <p>¿No sabes qué solución necesita tu negocio?</p>
@@ -100,10 +138,10 @@
       <section class="projects-section" id="proyectos" aria-labelledby="projects-title">
         <div class="section-heading reveal">
           <div>
-            <div class="eyebrow"><span></span> Proyectos seleccionados</div>
-            <h2 id="projects-title">Trabajo con propósito.</h2>
+            <div class="eyebrow"><span></span> 02 / Proyectos seleccionados</div>
+            <h2 id="projects-title">Menos promesas.<br /><span>Más proyectos reales.</span></h2>
           </div>
-          <p>Cada proyecto une claridad, personalidad y una ejecución que cuida hasta el último píxel.</p>
+          <p>Negocios distintos, un mismo compromiso: convertir una necesidad en una experiencia digital que funciona.</p>
         </div>
 
         <div class="projects-grid">
@@ -188,15 +226,29 @@
         </div>
       </section>
 
+      <section class="process-section" id="proceso" aria-labelledby="process-title">
+        <div class="process-inner">
+          <div class="section-heading reveal"><div><div class="eyebrow"><span></span> 03 / Cómo trabajamos</div><h2 id="process-title">De la conversación<br />a la puesta en marcha.</h2></div><p>Un proceso claro, con comunicación directa y decisiones que tomamos contigo.</p></div>
+          <div class="process-grid">
+            <article class="process-step reveal"><span>01</span><h3>Entendemos tu negocio</h3><p>Conversamos sobre tus objetivos, tus procesos y lo que necesitas mejorar.</p></article>
+            <article class="process-step reveal"><span>02</span><h3>Diseñamos la solución</h3><p>Definimos el alcance y la experiencia para dar forma a tu proyecto.</p></article>
+            <article class="process-step reveal"><span>03</span><h3>Construimos contigo</h3><p>Desarrollamos, compartimos avances y afinamos cada detalle con tu feedback.</p></article>
+            <article class="process-step reveal"><span>04</span><h3>Lo ponemos en marcha</h3><p>Probamos la solución y te acompañamos en sus primeros pasos.</p></article>
+          </div>
+        </div>
+      </section>
+
       <section class="quote-section" id="cotizacion" aria-labelledby="quote-title">
         <div class="quote-intro reveal">
-          <div class="eyebrow"><span></span> Solicita una cotización</div>
-          <h2 id="quote-title">Cuéntanos sobre tu <em>proyecto.</em></h2>
-          <p>Transformamos tus ideas en soluciones tecnológicas. Completa el formulario y conversemos sobre tu próximo proyecto.</p>
+          <div class="eyebrow"><span></span> 04 / Empecemos algo bueno</div>
+          <h2 id="quote-title">Tu próximo proyecto<br /> <em>empieza aquí.</em></h2>
+          <p>No necesitas tener todo resuelto. Cuéntanos tu idea y encontremos juntos la mejor forma de hacerla realidad.</p>
           <div class="quote-contact"><span>Atención comercial</span><a class="js-whatsapp" href="#" data-message="Hola, equipo de Nexvory Tech. 👋 Estoy interesado en sus servicios tecnológicos y quisiera recibir más información.">+51 929 437 093 <span>↗</span></a></div>
+          <div class="quote-aside"><span aria-hidden="true">↗</span><p>¿Prefieres una conversación directa?<br /><a class="js-whatsapp" href="#">Escríbenos por WhatsApp</a></p></div>
         </div>
 
         <form class="quote-form reveal" id="quote-form" novalidate aria-describedby="form-note">
+          <div class="form-heading"><h3>Hablemos de tu idea</h3><p>Los campos con * son obligatorios.</p></div>
           <div class="form-grid">
             <label class="form-field"><span>Nombre completo *</span><input type="text" name="name" autocomplete="name" maxlength="80" required /><small class="field-error"></small></label>
             <label class="form-field"><span>Nombre de la empresa</span><input type="text" name="company" autocomplete="organization" maxlength="100" /><small class="field-error"></small></label>
@@ -232,10 +284,11 @@
         <img class="brand-symbol brand-symbol--footer" src="assets/logo-nexvory.png?v=2" alt="" />
         <span class="brand-wordmark">NEXVORY<small>TECH</small></span>
       </a>
-      <p>© <span id="year"></span> Nexvory Tech. Hecho para destacar.</p>
+      <div class="footer-links"><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#privacidad">Privacidad</a><a href="terminos-y-condiciones.html">Términos y condiciones</a></div>
+      <p>© <span id="year"></span> Nexvory Tech S.A.C. · Perú</p>
     </footer>
 
-    <div class="project-menu" role="dialog" aria-label="Opciones del proyecto" aria-hidden="true">
+    <div class="project-menu" role="dialog" aria-label="Opciones del proyecto" aria-hidden="true" inert>
       <button type="button" data-action="zoom">
         <span class="menu-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4M11 8v6M8 11h6"/></svg></span>
         <span><strong>Agrandar imagen</strong><small>Ver a pantalla completa</small></span>
@@ -254,7 +307,7 @@
       </button>
     </div>
 
-    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada del proyecto" aria-hidden="true">
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada del proyecto" aria-hidden="true" inert>
       <button class="lightbox-close" type="button" aria-label="Cerrar imagen">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
       </button>

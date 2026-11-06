@@ -7,7 +7,7 @@ const privateState = projectMenu.querySelector(".private-state");
 const lightbox = document.querySelector(".lightbox");
 const lightboxImage = lightbox.querySelector("img");
 const closeLightboxButton = lightbox.querySelector(".lightbox-close");
-const cursorGlow = document.querySelector(".cursor-glow");
+
 const quoteForm = document.querySelector("#quote-form");
 const formStatus = document.querySelector("#form-status");
 const quoteSubmitButton = quoteForm.querySelector(".submit-button");
@@ -48,6 +48,8 @@ document.querySelectorAll(".service-card").forEach((card) => {
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+
+document.documentElement.classList.add("js-reveal");
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -98,24 +100,28 @@ function openMenu(card, event) {
   if (!isPrivate) openLink.href = card.dataset.url;
   projectMenu.classList.add("is-open");
   projectMenu.setAttribute("aria-hidden", "false");
+  projectMenu.inert = false;
   document.body.classList.add("menu-open");
+  zoomButton.focus({ preventScroll: true });
 }
 
 function closeMenu() {
   projectMenu.classList.remove("is-open");
   projectMenu.setAttribute("aria-hidden", "true");
+  projectMenu.inert = true;
   document.body.classList.remove("menu-open");
   activeCard = null;
 }
 
 function openLightbox() {
   if (!activeCard) return;
-  lastFocusedElement = document.activeElement;
+  lastFocusedElement = activeCard;
   lightboxImage.src = activeCard.dataset.image;
   lightboxImage.alt = `Vista ampliada de ${activeCard.querySelector("h3").textContent}`;
   closeMenu();
   lightbox.classList.add("is-open");
   lightbox.setAttribute("aria-hidden", "false");
+  lightbox.inert = false;
   document.body.classList.add("lightbox-open");
   closeLightboxButton.focus();
 }
@@ -123,14 +129,13 @@ function openLightbox() {
 function closeLightbox() {
   lightbox.classList.remove("is-open");
   lightbox.setAttribute("aria-hidden", "true");
+  lightbox.inert = true;
   document.body.classList.remove("lightbox-open");
   window.setTimeout(() => { lightboxImage.src = ""; }, 450);
-  lastFocusedElement?.focus();
+  lastFocusedElement?.focus({ preventScroll: true });
 }
 
 cards.forEach((card) => {
-  const visual = card.querySelector(".project-visual");
-
   card.addEventListener("click", (event) => {
     event.preventDefault();
     openMenu(card, event);
@@ -141,22 +146,6 @@ cards.forEach((card) => {
       event.preventDefault();
       openMenu(card);
     }
-  });
-
-  card.addEventListener("pointermove", (event) => {
-    if (event.pointerType === "touch") return;
-    const rect = visual.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width;
-    const y = (event.clientY - rect.top) / rect.height;
-    const rotateY = (x - 0.5) * 5;
-    const rotateX = (0.5 - y) * 5;
-    visual.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-    visual.style.setProperty("--glare-x", `${x * 100}%`);
-    visual.style.setProperty("--glare-y", `${y * 100}%`);
-  });
-
-  card.addEventListener("pointerleave", () => {
-    visual.style.transform = "";
   });
 });
 
@@ -440,19 +429,83 @@ document.addEventListener("pointerdown", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Tab" && lightbox.classList.contains("is-open")) {
+    event.preventDefault();
+    closeLightboxButton.focus();
+  }
   if (event.key === "Escape") {
     if (lightbox.classList.contains("is-open")) closeLightbox();
-    else closeMenu();
+    else {
+      const card = activeCard;
+      closeMenu();
+      card?.focus({ preventScroll: true });
+    }
   }
 });
 
 window.addEventListener("resize", closeMenu);
 window.addEventListener("scroll", closeMenu, { passive: true });
 
-window.addEventListener("pointermove", (event) => {
-  if (event.pointerType === "touch") return;
-  cursorGlow.animate(
-    { left: `${event.clientX}px`, top: `${event.clientY}px` },
-    { duration: 900, fill: "forwards", easing: "cubic-bezier(.22,1,.36,1)" },
-  );
+const navToggle = document.querySelector(".nav-toggle");
+const mainNav = document.querySelector("#main-nav");
+function closeNavigation() {
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("aria-label", "Abrir menú de navegación");
+  mainNav.classList.remove("is-open");
+}
+navToggle.addEventListener("click", () => {
+  const open = navToggle.getAttribute("aria-expanded") !== "true";
+  navToggle.setAttribute("aria-expanded", String(open));
+  navToggle.setAttribute("aria-label", open ? "Cerrar menú de navegación" : "Abrir menú de navegación");
+  mainNav.classList.toggle("is-open", open);
 });
+mainNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNavigation));
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".site-header")) closeNavigation();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && mainNav.classList.contains("is-open")) {
+    closeNavigation();
+    navToggle.focus();
+  }
+});
+window.addEventListener("resize", closeNavigation);
+
+// La misma página se renderiza a dos anchos reales para mostrar su diseño adaptable.
+document.querySelectorAll(".device-screen[data-preview-width]").forEach((screen) => {
+  const frame = screen.querySelector("iframe");
+  const previewWidth = Number(screen.dataset.previewWidth);
+  function fitPreview() {
+    frame.style.transform = `scale(${screen.clientWidth / previewWidth})`;
+  }
+  fitPreview();
+  if (typeof ResizeObserver !== "undefined") {
+    new ResizeObserver(fitPreview).observe(screen);
+  } else {
+    window.addEventListener("resize", fitPreview);
+  }
+});
+
+// La lista original es la única fuente de tecnologías; la copia permite un bucle continuo.
+const techSection = document.querySelector(".tech-section");
+if (techSection) {
+  const techTrack = techSection.querySelector(".tech-track");
+  const techGroup = techTrack.querySelector(".tech-group");
+  const techCopy = techGroup.cloneNode(true);
+  techCopy.setAttribute("aria-hidden", "true");
+  techCopy.removeAttribute("aria-label");
+  techCopy.inert = true;
+  techTrack.append(techCopy);
+  // Mantiene la misma velocidad de lectura aunque crezca la lista o cambie la pantalla.
+  function updateTechSpeed() {
+    techTrack.style.setProperty("--tech-duration", `${Math.max(24, techGroup.getBoundingClientRect().width / 40)}s`);
+  }
+  updateTechSpeed();
+  if (typeof ResizeObserver !== "undefined") {
+    new ResizeObserver(updateTechSpeed).observe(techGroup);
+  } else {
+    window.addEventListener("resize", updateTechSpeed);
+  }
+  techSection.classList.add("is-ready");
+
+}
